@@ -30,7 +30,7 @@ public class ConfigPropertiesViewController {
 
 		System.out.println(env.getProperty("domain"));
 		System.out.println(env.getProperty("location"));
-
+		System.out.println();
 		System.out.println(domain);
 		System.out.println(location);
 
