@@ -5,9 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties
-public class CatalogProperties {
+public class CatalogConfigProperties {
 
 	private String domain;
+	private String itemsType; 
 	private String location;
 
 	public String getLocation() {
@@ -25,5 +26,15 @@ public class CatalogProperties {
 	public void setDomain(String domain) {
 		this.domain = domain;
 	}
+
+	public String getItemsType() {
+		return itemsType;
+	}
+
+	public void setItemsType(String itemsType) {
+		this.itemsType = itemsType;
+	}
+	
+	
 
 }

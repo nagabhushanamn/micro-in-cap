@@ -12,9 +12,5 @@ spring:
       
   profiles:
     active: 
-    - blr  
+    - default  
 
-eureka:
-  client:
-    service-url: 
-      defaultZone: http://localhost:8002/eureka    
