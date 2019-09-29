@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,9 @@ import com.example.model.CartLine;
 @RestController
 @RequestMapping("/cart")
 public class CartController {
+	
+	@Value("${server.port}")
+	private int port;
 
 	@Autowired
 	private RedisTemplate<String, CartLine> redisTemplate;
@@ -32,6 +36,7 @@ public class CartController {
 
 	@PostMapping("/{id}")
 	public ResponseEntity<CartLine> add(@PathVariable(name="id") String id, @RequestBody CartLine itemLine) {
+		System.out.println("cart service - : "+port);
 		HashOperations<String, Integer, CartLine> hashOps = redisTemplate.opsForHash();
 		hashOps.put(id, itemLine.getItem().getId(), itemLine);
 //		cart.put(itemLine.getQty(), itemLine);
@@ -40,6 +45,7 @@ public class CartController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<?> get(@PathVariable String id) {
+		System.out.println("cart service - : "+port);
 		HashOperations<String, Integer, CartLine> hashOps = redisTemplate.opsForHash();
 		List<CartLine> cartLines = hashOps.values(id);
 //		List<CartLine> itemLines=cart.keySet()

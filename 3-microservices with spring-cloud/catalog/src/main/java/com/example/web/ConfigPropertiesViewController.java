@@ -13,13 +13,14 @@ import com.example.config.CatalogConfigProperties;
 @RefreshScope
 public class ConfigPropertiesViewController {
 
+	// way-1
 	@Autowired
 	private Environment env;
 
 	@Autowired
 	private CatalogConfigProperties properties;
 
-	
+	// way-2
 	@Value("${domain}")
 	private String domain;
 	@Value("${location}")

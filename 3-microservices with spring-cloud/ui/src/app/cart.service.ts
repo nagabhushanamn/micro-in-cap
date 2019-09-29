@@ -43,7 +43,7 @@ export class CartService {
     } else {
       this.cart = { ...this.cart, [id]: cartLine }
     }
-    this.http.post("http://localhost:8083/cart/Nag", cartLine)
+    this.http.post("http://localhost:8080/cart/cart/Nag", cartLine)
       .subscribe(response => {
         this.cartQty = Object.keys(this.cart).length
         this.cartStream.next({ cart: this.cart, cartQty: this.cartQty })
@@ -51,7 +51,7 @@ export class CartService {
   }
 
   checkout() {
-    this.http.post("http://localhost:8084/checkout/Nag", {})
+    this.http.post("http://localhost:8080/order/checkout/Nag", {})
       .subscribe(response => {
         this.cart = {};
         this.cartQty = Object.keys(this.cart).length
@@ -60,7 +60,7 @@ export class CartService {
   }
 
   loadCart() {
-    this.http.get("http://localhost:8083/cart/Nag")
+    this.http.get("http://localhost:8080/cart/cart/Nag")
       .subscribe((response: Array<any>) => {
         response.forEach(line => {
           this.cart[line.item.id] = line
@@ -71,7 +71,7 @@ export class CartService {
   }
 
   loadOrders() {
-    return this.http.get("http://localhost:8084/orders")
+    return this.http.get("http://localhost:8080/order/orders")
   }
 
 }

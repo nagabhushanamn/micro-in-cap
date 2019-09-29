@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties
+@ConfigurationProperties // way-3
 public class CatalogConfigProperties {
 
 	private String domain;

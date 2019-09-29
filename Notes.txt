@@ -108,4 +108,40 @@ spring web
 
 
 
+to run any process in OS
+
+what we need ?
+
+ high-level
+ -----------
+
+    - cpu
+    - memory
+
+ low-level
+ ----------
+
+    - os packages
+    - instructions/code
+    - dependencies
+    - language runtime
+    - config files
+    - isolated file system
+    - n/w ing
+    - n/w ports
+    ....
+
+
+------------------------------------------------------------------
+
+what is docker?
+
+    - build       => image i.e snal all executables to un process
+    - ship        => docker registry ( public , private)
+    - run         => container i.e process at OS
+
+------------------------------------------------------------------    
+
+
+
 

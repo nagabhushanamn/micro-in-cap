@@ -9,7 +9,7 @@ export class ItemService {
   constructor(private httpClient: HttpClient) { }
 
   loadItems() {
-    let apiURL = "http://localhost:8081/items";
+    let apiURL = "http://167.71.236.13:8081/items";
     return this.httpClient.get(apiURL)
   }
   loadReviews(itemId) {

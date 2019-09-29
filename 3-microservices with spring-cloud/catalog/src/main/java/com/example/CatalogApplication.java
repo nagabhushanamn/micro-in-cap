@@ -11,6 +11,7 @@ import com.example.model.Item;
 import com.example.repository.ItemRepository;
 
 
+
 @EnableDiscoveryClient
 @SpringBootApplication
 public class CatalogApplication{

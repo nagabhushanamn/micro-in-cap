@@ -9,16 +9,16 @@ export class ItemService {
   constructor(private httpClient: HttpClient) { }
 
   loadItems() {
-    let apiURL = "http://localhost:8081/items";
+    let apiURL = "http://localhost:8080/catalog/items";
     return this.httpClient.get(apiURL)
   }
   loadReviews(itemId) {
-    let apiURL = `http://localhost:8082/reviews/search/findByItemId?itemId=${itemId}`;
+    let apiURL = `http://localhost:8080/review/reviews/search/findByItemId?itemId=${itemId}`;
     return this.httpClient.get(apiURL)
   }
   submitNewReview(itemId, review) {
     review.itemId=itemId;
-    let apiURL = `http://localhost:8082/reviews`;
+    let apiURL = `http://localhost:8080/review/reviews`;
     return this.httpClient.post(apiURL, review)
   }
 
