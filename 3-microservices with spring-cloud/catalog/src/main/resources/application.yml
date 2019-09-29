@@ -22,3 +22,10 @@ spring:
       ddl-auto: create  
       
       
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'    

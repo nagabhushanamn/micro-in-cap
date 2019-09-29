@@ -33,6 +33,7 @@ public class ConfigPropertiesViewController {
 		System.out.println();
 		System.out.println(domain);
 		System.out.println(location);
+		System.out.println();
 
 		return properties;
 	}
