@@ -1,0 +1,8 @@
+<table class="table table-bordered">
+    <tr *ngFor="let order of orders">
+        <td>{{order.id}}</td>
+        <td>{{order.dateTime|date:'medium'}}</td>
+        <td>{{order.totalAmount|currency:'INR'}}</td>
+        <td>status</td>
+    </tr>
+</table>

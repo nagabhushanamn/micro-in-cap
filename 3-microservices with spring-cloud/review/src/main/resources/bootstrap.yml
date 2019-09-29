@@ -1,0 +1,28 @@
+
+
+
+
+
+spring:
+  application:
+    name: review
+    
+
+  cloud:
+    config:
+      uri:
+      - http://localhost:8001
+      
+  profiles:
+    active: 
+    - blr  
+    
+    
+    
+
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://localhost:8002/eureka
+      
+          

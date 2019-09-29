@@ -1,0 +1,111 @@
+
+
+billing-service
+---------------
+ - data / model
+ - layer(s)
+    a. data/repositoy layer ==> persisting logic
+    b. service layer        ==> pocessing logic
+    c. web layer            ==> request & response logic
+    ....
+e.g  
+
+    1. PriceMatrix
+        - getPrice(item)
+
+    2. Billing
+        - getTotalPrice(cart)
+    
+
+    -------------------------------------------
+    design & performance issues
+    -------------------------------------------
+
+    -> dependent & dependency r tight-coupled
+        => module can't extend with new features easily
+    -> too many duplcate instances r created & discarded
+        => slow, memory/resource use high...
+    -> unit-tesing not possible
+        => dev & bug fix slow
+
+    reason for these issues:
+
+    -> dependent itself creating it's own dependency
+
+    soln :
+
+        => don't create , factory-lookup
+
+     limitation on factory-lookup:
+        => factory location tight coupling
+
+     best spln:
+        => don't create/lookup , get/inject by 'third-paty' ( Inversion of Control )      
+
+-------------------------------------------
+OO concepts
+-------------------------------------------
+
+-> asbtraction
+-> encapsulation
+-> inheritance
+-> polymorphism
+
+
+-------------------------------------------
+OO pinciples
+-------------------------------------------
+
+-> single-responsibility
+-> open & closed 
+-> Liskov, substitution
+-> Interface segregation
+-> Dependency inversion
+
+
+S.O.L.I.
+
+
+-------------------------------------------
+OO patterns
+-------------------------------------------
+
+-> creational
+-> structural
+-> behav..
+
+-------------------------------------------
+
+spring configuation
+
+        a. XML only
+        b. XML + Annotation
+        c. java-config + annotations only ( recommended)
+
+-------------------------------------------
+
+sping data-access
+
+    SQL-datasource 
+
+        - spring-jdbc
+        - spring-jpa
+        - sping-data-jpa 
+
+
+
+-------------------------------------------
+
+spring web
+
+    - spring  webmvc
+
+
+-------------------------------------------
+
+
+
+
+
+
+
